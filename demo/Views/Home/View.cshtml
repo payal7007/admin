@@ -1,0 +1,53 @@
+﻿@model IEnumerable<demo.Models.MyAdvertise>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.advertiseId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.advertiseTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.advertiseDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.advertisePrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.advertiseStatus)
+        </th>
+        <th> Action </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.advertiseId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.advertiseTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.advertiseDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.advertisePrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.advertiseStatus)
+            </td>
+            <td>
+                <button type="submit" id="btnSave" name="Command" value="Save">Approve</button>
+
+                <button type="submit" id="btnsubmit" name="Command" value="Save">Reject</button>|
+                @Html.ActionLink("Delete", "Delete", new { @class = "btn btn-primary" })
+            </td>
+        </tr>
+    }
+
+</table>
